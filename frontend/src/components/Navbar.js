@@ -5,7 +5,7 @@ const Navbar = ({menuClick}) => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <h2>MERN-SHOP</h2>
+      <Link to="/"><h2>MERN-SHOP</h2></Link>
       </div>
 
       <ul className="navbar-links">
