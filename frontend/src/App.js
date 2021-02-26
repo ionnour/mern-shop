@@ -14,7 +14,7 @@ function App() {
     <Router>
      <Navbar/>
 
-     {/* <Backdrop/> */}
+     <Backdrop/> 
       <main>
         <Switch>
           <Route exact path='/' component={Home}/>
