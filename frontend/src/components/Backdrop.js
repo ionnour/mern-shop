@@ -1,10 +1,8 @@
-import 'Backdrop.css';
+import './Backdrop.css';
 
-const Backdrop = () => {
+const Backdrop = ({showMenu, menuClick}) => {
   return (
-    <div className="backdrop">
-      
-    </div>
+    showMenu &&<div className="backdrop" onClick={menuClick}></div>
   )
 }
 
