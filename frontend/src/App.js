@@ -19,7 +19,7 @@ function App() {
   return (
     <Router>
       <Navbar menuClick={() => setSideMenu(true)}/>
-      <SideBar showMenu={sideMenu}/>
+      <SideBar showMenu={sideMenu} menuClick={() => setSideMenu(false)}/>
       <Backdrop showMenu={sideMenu} menuClick={() => setSideMenu(false)}/> 
       <main>
         <Switch>

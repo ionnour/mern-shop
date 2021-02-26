@@ -1,6 +1,7 @@
 import './SideBar.css';
+import {Link } from 'react-router-dom';
 
-const SideBar = ({showMenu}) => {
+const SideBar = ({showMenu, menuClick}) => {
   const  sideMenu = ["sidedrawer"];
 
   if (showMenu) {
@@ -9,8 +10,21 @@ const SideBar = ({showMenu}) => {
   
 
   return (
-    <div  className={sideMenu.join(" ")}>
-      
+    <div  className={sideMenu.join(" ")} onClick={menuClick}>
+      <ul className="sidebar-links">
+      <li>
+          <Link to="/cart">
+            <i className="fas fa-shopping-cart"></i>
+            <span>
+              Cart{" "}
+              <span className="sidebar-cartbadge">0</span>
+            </span>
+          </Link>
+        </li>
+        <li>
+          <Link to="/">Shop</Link>
+        </li>
+      </ul>
     </div>
   )
 }
