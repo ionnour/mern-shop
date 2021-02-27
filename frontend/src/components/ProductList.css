@@ -14,6 +14,7 @@
 .product > img {
   width: 100%;
   height: 170px;
+  margin: 0;
   object-fit: contain;
   border-radius: 8px;
 }
@@ -27,6 +28,7 @@
 }
 
 .info-name {
+  margin-top: 1rem;
   font-size: 1rem;
   overflow: hidden;
 }

@@ -11,6 +11,12 @@ app.use(express.json());
 
 app.use("/api/products", productsRoutes);
 
+app.get("/", (req, res) => {
+  res.json({ message: "API running..." });
+});
+
+
+
 
 //starting server
 const PORT = process.env.PORT || 5000;
