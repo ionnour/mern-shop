@@ -22,19 +22,40 @@ export const getProducts = () => async (dispatch) => {
   }
 };
 
-export const getProductDetails = (id) => async (dispach) => {
-  try{
-    dispach({ type: actionTypes.GET_PRODUCT_DETAILS_REQUEST});
+// export const getProductDetails = (id) => async (dispach) => {
+//   try{
+//     dispach({ type: actionTypes.GET_PRODUCT_DETAILS_REQUEST});
 
-    const {data} = await axios.get(`/api/products/${id}`);
+//     const {data} = await axios.get(`/api/products/${id}`);
 
-    dispach({
-      type: actionTypes.GET_PRODUCTS_SUCCESS,
+//     dispatch({
+//       type: actionTypes.GET_PRODUCTS_SUCCESS,
+//       payload: data,
+//     });
+//   } catch (error) {
+//     dispach({
+//       type: actionTypes.GET_PRODUCTS_FAIL,
+//       payload:
+//         error.response && error.response.data.message
+//           ? error.response.data.message
+//           : error.message,
+//     });
+//   }
+// };
+
+export const getProductDetails = (id) => async (dispatch) => {
+  try {
+    dispatch({ type: actionTypes.GET_PRODUCT_DETAILS_REQUEST });
+
+    const { data } = await axios.get(`/api/products/${id}`);
+
+    dispatch({
+      type: actionTypes.GET_PRODUCT_DETAILS_SUCCESS,
       payload: data,
     });
   } catch (error) {
-    dispach({
-      type: actionTypes.GET_PRODUCTS_FAIL,
+    dispatch({
+      type: actionTypes.GET_PRODUCT_DETAILS_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message
