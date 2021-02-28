@@ -5,7 +5,7 @@ E-shop build on MERN stack.
 ## Core Packages
 
 1. redux - state management
-2. mongoose - executing graphql queries and mutations
+2. mongoose - executing queries and mutations
 3. react-router - routing
 4. express - for simple api
 
