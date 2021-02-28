@@ -1,4 +1,5 @@
-require('dotenv').config({path: '../.env'});
+require('dotenv').config({path: `${__dirname}/../config.env`});
+const path = require('path');
 const express = require('express');
 const productsRoutes = require('./routes/productRoutes');
 
@@ -11,9 +12,19 @@ app.use(express.json());
 
 app.use("/api/products", productsRoutes);
 
-app.get("/", (req, res) => {
-  res.json({ message: "API running..." });
-});
+console.log(__dirname,process.env.NODE_ENV    );
+if(process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, '../frontend/build')));
+  console.log(__dirname);
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'frontend', 'build', 'index.html'));
+  });
+} else {
+  app.get('/', (req, res) => {
+    res.send("API running...");
+  });
+}
 
 
 
